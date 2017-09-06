@@ -1,12 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ldgd.equipment.monitoring.SingleLampState">
+    android:baselineAligned="false"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/sl_image_bg"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:alwaysDrawnWithCache="false"
+        android:fadingEdge="none"
+        android:overScrollMode="never"
+        android:persistentDrawingCache="none"
+        android:scrollbars="none">
 
 
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
 
+
+            <ImageView
+                android:id="@+id/iv_home"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/single_lamp_state_bg" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/single_lamp_state_title_bg"
+                    android:gravity="center"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="25dp"
+                    android:text="单灯状态表"
+                    android:textColor="#fff"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="60dp"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center"
+                        android:background="#14486F" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="东泰路"
+                        android:textColor="#A7A6A8"
+                        android:textSize="20sp" />
+
+                    <View
+                        android:layout_width="60dp"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center"
+                        android:background="#14486F" />
+                </LinearLayout>
+
+                <!--  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:text="sdfsdfdsfsdfdsf"
+                      android:textColor="#fff" />
+
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:text="sdfsdfdsfsdfdsf2"
+                      android:textColor="#fff" />
+
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:text="sdfsdfdsfsdfdsf2"
+                      android:textColor="#fff" />
+
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:text="sdfsdfdsfsdfdsf2"
+                      android:textColor="#fff" />-->
+
+                <LinearLayout
+                    android:id="@+id/ly_linear_graph"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:layout_gravity="right"
+                    android:baselineAligned="false"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableLeft="@mipmap/ic_launcher"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="单灯状态表"
+                        android:textColor="#fff"
+                        android:textSize="20sp" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </FrameLayout>
+    </ScrollView>
 
 </LinearLayout>
