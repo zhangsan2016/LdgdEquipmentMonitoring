@@ -14,9 +14,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:drawableLeft="@drawable/ldgd_logo"
+            android:drawablePadding="5dp"
             android:text="洛丁智慧城市照明云管理系统"
             android:textColor="@android:color/white"
             android:textSize="20sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:paddingRight="10dp"
+            android:src="@drawable/single_lamp_title_setting" />
 
 
     </RelativeLayout>
@@ -115,7 +125,7 @@
                 <LinearLayout
                     android:id="@+id/ly_linear_graph"
                     android:layout_width="match_parent"
-                    android:layout_height="250dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:baselineAligned="false"
                     android:orientation="vertical">
@@ -135,11 +145,42 @@
 
                     </RelativeLayout>
 
-                    <com.github.mikephil.charting.charts.LineChart
-                        android:id="@+id/chart1"
+                    <FrameLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_above="@+id/seekBar1" />
+                        android:layout_height="wrap_content">
+
+
+                        <com.github.mikephil.charting.charts.LineChart
+                            android:id="@+id/chart1"
+                            android:layout_width="match_parent"
+                            android:layout_height="250dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_marginRight="8dp" />
+
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:ems="1"
+                            android:gravity="center_horizontal"
+                            android:text="功率KW"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|right"
+                            android:layout_marginRight="20dp"
+                            android:gravity="center_vertical"
+                            android:text="（时间）"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp" />
+
+                    </FrameLayout>
 
 
                 </LinearLayout>
