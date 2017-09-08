@@ -7,5 +7,12 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    
+    <style name="single_lamp_state_chart_textcolor">
+
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">15sp</item>
+
+    </style>
 
 </resources>

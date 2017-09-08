@@ -10,11 +10,13 @@ import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.utils.ValueFormatter;
 import com.github.mikephil.charting.utils.XLabels;
 import com.github.mikephil.charting.utils.YLabels;
 import com.ldgd.equipment.monitoring.R;
 import com.ldgd.equipment.monitoring.util.TimeUtils;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class SingleLampStateActivity extends Activity {
@@ -126,13 +128,19 @@ public class SingleLampStateActivity extends Activity {
 
         ArrayList<Entry> vals1 = new ArrayList<Entry>();
 
+        // min+(int)(Math.random()*(max-min+1));
         for (int i = 0; i < count; i++) {
-            float mult = (range + 1);
-            float val = (float) (Math.random() * mult);// + (float)
+     //    float mult = (range + 1);
+//            float val = (float) (Math.random() * (mult)) ;// + (float)
+
+            float val = (float)  (Math.random() * (range - 0.25)+0.25) ;
+
             // ((mult *
             // 0.1) / 10);
             vals1.add(new Entry(val, i));
         }
+
+
 
         // create a dataset and give it a type
         LineDataSet set1 = new LineDataSet(vals1, "DataSet 1");
@@ -145,7 +153,8 @@ public class SingleLampStateActivity extends Activity {
         set1.setHighLightColor(Color.rgb(244, 117, 117));
         //  set1.setColor(Color.rgb(104, 241, 175));
        //set1.setColor(Color.rgb(208,240,240));
-        set1.setColor(Color.rgb(104, 241, 175));
+        //set1.setColor(Color.rgb(104, 241, 175));
+        set1.setColor(Color.rgb(33,181,241));
 
 
         ArrayList<LineDataSet> dataSets = new ArrayList<LineDataSet>();
@@ -154,7 +163,15 @@ public class SingleLampStateActivity extends Activity {
         // create a data object with the datasets
         LineData data = new LineData(xVals, dataSets);
 
+        mChart.setValueFormatter(new ValueFormatter() {
 
+            @Override
+            public String getFormattedValue(float value) {
+              //  DecimalFormat df = new DecimalFormat("#.0");  //生成一个df对象，确保放大的value也是小数点后一位
+                DecimalFormat df = new DecimalFormat("###.##");
+                return df.format(value);
+            }
+        });
         // set data
         mChart.setData(data);
     }

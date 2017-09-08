@@ -4,6 +4,45 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/single_lamp_state_title_bg"
+        android:gravity="center"
+        android:paddingBottom="5dp"
+        android:paddingLeft="25dp"
+        android:text="单灯状态表"
+        android:textColor="#fff"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="60dp"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:background="#14486F" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="东泰路"
+            android:textColor="#A7A6A8"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="60dp"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:background="#14486F" />
+    </LinearLayout>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/ly_linear_graph"
@@ -73,22 +112,19 @@
         android:orientation="horizontal">
 
         <TextView
+            style="@style/single_lamp_state_chart_textcolor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:text="报警:"
-            android:textColor="@android:color/white"
-            android:textSize="12sp" />
+            android:text="报警:" />
 
         <TextView
+            style="@style/single_lamp_state_chart_textcolor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:ellipsize="end"
             android:maxLines="1"
-            android:text="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-            android:textColor="@android:color/white"
-            android:textSize="12sp" />
+            android:text="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
     </LinearLayout>
 
     <LinearLayout
@@ -99,22 +135,19 @@
         android:orientation="horizontal">
 
         <TextView
+            style="@style/single_lamp_state_chart_textcolor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:text="照明开关:"
-            android:textColor="@android:color/white"
-            android:textSize="12sp" />
+            android:text="照明开关:" />
 
         <TextView
+            style="@style/single_lamp_state_chart_textcolor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:ellipsize="end"
             android:maxLines="1"
-            android:text="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-            android:textColor="@android:color/white"
-            android:textSize="12sp" />
+            android:text="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
 
     </LinearLayout>
 
@@ -126,22 +159,19 @@
         android:orientation="horizontal">
 
         <TextView
+            style="@style/single_lamp_state_chart_textcolor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:text="当前路面照度:"
-            android:textColor="@android:color/white"
-            android:textSize="12sp" />
+            android:text="当前路面照度:" />
 
         <TextView
+            style="@style/single_lamp_state_chart_textcolor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:ellipsize="end"
             android:maxLines="1"
-            android:text="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-            android:textColor="@android:color/white"
-            android:textSize="12sp" />
+            android:text="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
 
     </LinearLayout>
 
