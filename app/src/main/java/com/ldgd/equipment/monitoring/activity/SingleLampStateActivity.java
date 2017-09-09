@@ -11,6 +11,8 @@ import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.utils.ColorTemplate;
+import com.github.mikephil.charting.utils.Legend;
 import com.github.mikephil.charting.utils.ValueFormatter;
 import com.github.mikephil.charting.utils.XLabels;
 import com.github.mikephil.charting.utils.YLabels;
@@ -23,13 +25,17 @@ import java.util.ArrayList;
 public class SingleLampStateActivity extends Activity {
 
     private LineChart mChart;
+    private LineChart chart2;
     private TextView tvTime;
+    private Typeface  tf;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_single_lamp_state);
 
 
@@ -37,25 +43,117 @@ public class SingleLampStateActivity extends Activity {
         initView();
 
         initChart1();
+        initChart2();
 
         // 设置字体 (Android LED数字/电子表字体digital font)
       //  Typeface mTfLight = Typeface.createFromAsset(getAssets(), "digital-7.ttf");
         Typeface mTfLight = Typeface.createFromAsset(getAssets(), "led.ttf");
         tvTime.setTypeface(mTfLight);
 
+
+    }
+
+    private void initChart2() {
+        // apply styling
+        //chart2.setValueTypeface(mTf);
+        chart2.setDrawYValues(false);
+        chart2.setDescription("");
+        // 显示图例
+        chart2.setDrawLegend(true);
+
+        chart2.setDrawVerticalGrid(false);
+        chart2.setDrawGridBackground(false);
+
+        // 网格
+        chart2.setDrawHorizontalGrid(true);
+        chart2.setDrawVerticalGrid(true);
+
+        // y轴单位
+        chart2.setUnit("%");
+
+        XLabels xl =chart2.getXLabels();
+        xl.setCenterXLabelText(true);
+        xl.setPosition(XLabels.XLabelPosition.BOTTOM);
+        xl.setTypeface(tf);
+        xl.setTextColor(Color.WHITE);
+
+
+        YLabels yl = chart2.getYLabels();
+        yl.setTypeface(tf);
+        yl.setLabelCount(4);
+        yl.setTextColor(Color.WHITE);
+
+        // set data
+        chart2.setData(generateDataLine(1));
+
+        // 设置图例字体
+        Legend legend = chart2.getLegend();//设置比例图
+        legend.setTextColor(Color.WHITE);
+        legend.setTextSize(14);
+     //  legend.setPosition(Legend.LegendPosition.BELOW_CHART_CENTER);
+        legend.setPosition(Legend.LegendPosition.RIGHT_OF_CHART_INSIDE);
+
+        // do not forget to refresh the chart
+        //chart2.invalidate();
+        chart2.animateX(1000);
+
+    }
+
+    private LineData generateDataLine(int cnt) {
+        ArrayList<Entry> e1 = new ArrayList<Entry>();
+
+        for (int i = 0; i < 12; i++) {
+            e1.add(new Entry((int) (Math.random() * 65) + 40, i));
+        }
+
+        LineDataSet d1 = new LineDataSet(e1, "功耗");
+       // d1.getCircleColor(Color.rgb(248,248,255));
+        d1.setLineWidth(3f);
+        d1.setCircleSize(5f);
+        d1.setHighLightColor(Color.rgb(244, 117, 117));
+
+        ArrayList<Entry> e2 = new ArrayList<Entry>();
+
+        for (int i = 0; i < 12; i++) {
+            e2.add(new Entry(e1.get(i).getVal() - 30, i));
+        }
+
+        LineDataSet d2 = new LineDataSet(e2, "New DataSet " + cnt + ", (2)");
+        d2.setLineWidth(3f);
+        d2.setCircleSize(5f);
+
+        d2.setHighLightColor(Color.rgb(244, 117, 117));
+        d2.setColor(ColorTemplate.VORDIPLOM_COLORS[0]);
+        d2.setCircleColor(ColorTemplate.VORDIPLOM_COLORS[0]);
+
+        ArrayList<LineDataSet> sets = new ArrayList<LineDataSet>();
+        sets.add(d1);
+
+        //    LineData cd = new LineData(getMonths(), sets);
+        LineData cd = new LineData(getMonths(), sets);
+        return cd;
     }
 
     private void initView() {
         mChart = (LineChart) findViewById(R.id.chart1);
+        // 单灯状态表
         tvTime = (TextView) findViewById(R.id.tv_single_lamp_time);
+        // 功耗统计表
+         chart2 =  (LineChart)this.findViewById(R.id.chart_dissipation_statistics);
 
 
     }
 
     private void initChart1() {
+        // 设置自定义字体
+        tf = Typeface.createFromAsset(getAssets(), "OpenSans-Regular.ttf");
+
         // if enabled, the chart will always start at zero on the y-axis
         mChart.setStartAtZero(true);
 
+
+        // 设置透明度
+        mChart.setAlpha(0.6f);
         // 双击缩放
         mChart.setDoubleTapToZoomEnabled(false);
 
@@ -91,8 +189,6 @@ public class SingleLampStateActivity extends Activity {
         mChart.setDrawHorizontalGrid(true);
         mChart.setDrawVerticalGrid(true);
 
-        // 设置自定义字体
-        Typeface tf = Typeface.createFromAsset(getAssets(), "OpenSans-Regular.ttf");
         mChart.setValueTypeface(tf);
 
 
@@ -184,5 +280,17 @@ public class SingleLampStateActivity extends Activity {
         });
         // set data
         mChart.setData(data);
+    }
+
+
+
+    private ArrayList<String> getMonths() {
+
+        ArrayList<String> m = new ArrayList<String>();
+        for (int i = 0; i <= 30; i++) {
+            m.add(i+1 +"");
+        }
+
+        return m;
     }
 }

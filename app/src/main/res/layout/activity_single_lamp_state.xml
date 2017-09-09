@@ -57,12 +57,14 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
+                <!-- 单灯状态 -->
+                <include layout="@layout/single_lamp_state_chart" />
 
-               <include layout="@layout/single_lamp_state_chart" />
+                <!-- 路灯功耗统计 -->
+                <include layout="@layout/single_lamp_dissipation_statistics" />
 
-
-                <include layout="@layout/single_lamp_dissipation_statistics"/>
-
+                <!-- 节能减排分析 -->
+                <include layout="@layout/energy_saving_reduce_emissions_analyze"/>
 
 
             </LinearLayout>

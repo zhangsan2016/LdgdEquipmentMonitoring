@@ -125,7 +125,7 @@
             android:layout_marginLeft="10dp"
             android:ellipsize="end"
             android:maxLines="1"
-            android:text="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
+            android:text="异常1次 平均功耗0.12   电压：239.1V   电流：0.92A" />
     </LinearLayout>
 
     <LinearLayout
@@ -148,7 +148,7 @@
             android:layout_marginLeft="10dp"
             android:ellipsize="end"
             android:maxLines="1"
-            android:text="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
+            android:text="18:00-22:00 100%   22:00-03:00 50%   03:00-06:00 30%" />
 
     </LinearLayout>
 
@@ -172,7 +172,7 @@
             android:layout_marginLeft="10dp"
             android:ellipsize="end"
             android:maxLines="1"
-            android:text="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
+            android:text="50LUX" />
 
     </LinearLayout>
 
