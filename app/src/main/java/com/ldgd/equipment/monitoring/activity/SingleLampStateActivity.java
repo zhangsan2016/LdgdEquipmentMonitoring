@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.data.Entry;
@@ -22,6 +23,7 @@ import java.util.ArrayList;
 public class SingleLampStateActivity extends Activity {
 
     private LineChart mChart;
+    private TextView tvTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,14 +33,22 @@ public class SingleLampStateActivity extends Activity {
         setContentView(R.layout.activity_single_lamp_state);
 
 
+
         initView();
 
         initChart1();
+
+        // 设置字体 (Android LED数字/电子表字体digital font)
+      //  Typeface mTfLight = Typeface.createFromAsset(getAssets(), "digital-7.ttf");
+        Typeface mTfLight = Typeface.createFromAsset(getAssets(), "led.ttf");
+        tvTime.setTypeface(mTfLight);
 
     }
 
     private void initView() {
         mChart = (LineChart) findViewById(R.id.chart1);
+        tvTime = (TextView) findViewById(R.id.tv_single_lamp_time);
+
 
     }
 

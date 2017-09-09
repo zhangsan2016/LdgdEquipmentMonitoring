@@ -58,9 +58,12 @@
                 android:orientation="vertical">
 
 
-                <include layout="@layout/single_lamp_state_chart" />
+               <include layout="@layout/single_lamp_state_chart" />
+
 
                 <include layout="@layout/single_lamp_dissipation_statistics"/>
+
+
 
             </LinearLayout>
 
