@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.WindowManager;
 import android.widget.TextView;
@@ -263,6 +264,13 @@ public class SingleLampStateActivity extends Activity implements OnChartValueSel
         chart2 = (LineChart) this.findViewById(R.id.chart_dissipation_statistics);
         // 节能减排分析
         chart3 = (BarChart) findViewById(R.id.chart_analyze);
+
+        TextView tv_environmental1 = (TextView) this.findViewById(R.id.tv_environmental1);
+       //两次加大字体，设置字体为红色（big会加大字号，font可以定义颜色）
+        tv_environmental1.setText(Html.fromHtml("LED路灯比高压钠路灯节能 <font color='#0B99F7'><big><big> 75%</big></big></font>"));
+        TextView tv_environmental2 = (TextView) this.findViewById(R.id.tv_environmental2);
+        //两次加大字体，设置字体为红色（big会加大字号，font可以定义颜色）
+        tv_environmental2.setText(Html.fromHtml("相当于1kwLED智慧路灯每年节能减排： <font color='#0B99F7'><big><big>3275</big></big></font>千克\"二氧化碳\""));
 
 
     }

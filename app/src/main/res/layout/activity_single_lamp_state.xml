@@ -64,10 +64,13 @@
                 <include layout="@layout/single_lamp_dissipation_statistics" />
 
                 <!-- 节能减排分析 -->
-                <include layout="@layout/energy_saving_reduce_emissions_analyze"/>
+                <include layout="@layout/energy_saving_reduce_emissions_analyze" />
 
+               <!-- 中科院LOGO -->
+                <include layout="@layout/zky_logo"/>
 
             </LinearLayout>
+
 
         </FrameLayout>
 
