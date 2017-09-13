@@ -210,6 +210,7 @@ public class SingleLampStateActivity extends Activity implements OnChartValueSel
 
         // 设置图例字体
         Legend legend = chart2.getLegend();//设置比例图
+       // legend.setForm(Legend.LegendForm.LINE);  // 图例形状
         legend.setTextColor(Color.WHITE);
         legend.setTextSize(14);
         //  legend.setPosition(Legend.LegendPosition.BELOW_CHART_CENTER);
@@ -281,7 +282,6 @@ public class SingleLampStateActivity extends Activity implements OnChartValueSel
 
         // if enabled, the chart will always start at zero on the y-axis
         mChart.setStartAtZero(true);
-
 
         // 设置透明度
         mChart.setAlpha(0.6f);
